@@ -1,0 +1,59 @@
+= SPEC-1: Welding and Metal Fabrication Job Pricing Tool
+:sectnums:
+:toc:
+
+== Background
+
+The welding and metal fabrication job pricing tool is being developed to support a new welding and metal fabrication business. The business is currently in its initial stages, with all necessary equipment and expertise in place but without any established clientele or business model. This tool aims to streamline the process of pricing jobs, ensuring transparency and accuracy for both the business owner and potential customers. The tool will help in preparing detailed, organized, and transparent pricing breakdowns for welding and fabrication projects, which can be used for bids, estimates, and customer negotiations.
+
+== Requirements
+
+The primary requirements for the welding and metal fabrication job pricing tool are as follows:
+
+* Must prompt for all relevant variables and metrics that affect the cost of the project.
+* Should have two modes of operation:
+  * **Wizard Mode**: This default mode will prompt the user for each individual variable and metric, one at a time.
+  * **Form Mode**: This mode will present all variables and metrics in a single form for the user to fill out at once.
+* Both modes should result in a detailed, organized, structured, informative, and easy-to-navigate pricing breakdown.
+* The tool should be open-source initially, with a command-line interface (CLI). Future iterations should include a graphical user interface (GUI) and cross-platform compatibility.
+* Must allow saving all created projects for future reference, with different storage locations for approved, pending, and other statuses.
+* Ensure complete transparency in cost breakdowns to facilitate customer understanding and trust.
+* Provide mechanisms for easily updating or adding new metrics and variables as the business evolves.
+
+== Method
+
+### Metrics and Variables
+
+To accurately calculate the cost of each project, the tool will consider the following metrics and variables:
+
+1. **Material Costs**:
+    - *Type of Metal*: Specify the type of metal (e.g., stainless steel, mild steel, aluminum).
+    - *Form of Metal*: Specify the form (e.g., sheet, square tubing, circular tubing, rod, square stock).
+    - *Purchased Material Details*:
+        - Total cost of purchased metal.
+        - Purchase units (commonly in feet or other standard measurements).
+        - Unit conversion to inches for precision in cost calculation.
+
+2. **Labor Costs**:
+    - *Action-Based Time Tracking*: Users input time spent on specific actions or steps within the project, including additional services like cutting, bending, and finishing.
+        - Example: Grinding edges, welding a component, cutting, bending, etc.
+        - Time entries are saved for reuse in future projects to streamline the process.
+    - *Accumulated Time*:
+        - The tool calculates total labor time by summing the time spent on individual actions.
+        - Labor costs are then calculated based on a predefined hourly rate.
+
+3. **Equipment Usage**:
+    - Type of equipment used (e.g., MIG welder, TIG welder, grinders).
+    - Duration of use (time-based or per job basis).
+
+4. **Consumables**:
+    - *Welding Consumables*: Calculated based on the total length of welds in inches, including costs of welding rods, electricity, and other related factors.
+    - *Grinding Discs and Other Consumables*: Costs are included based on the number of consumables used during the project. Discs or other items are counted as used if they are consumed entirely or significantly enough to be replaced.
+
+5. **Overhead Costs**:
+    - **Shop Overhead**: General costs associated with maintaining the workspace (e.g., rent, maintenance).
+
+== Next Steps
+
+1. **Technical Design**: Outline the architecture, including the database schema for storing project details, actions, and costs. This will also cover the interface design for both the wizard and form modes.
+2. **Implementation**: Guide on building the tool, starting with a command-line interface (CLI) and potentially expanding to a GUI in the future.
