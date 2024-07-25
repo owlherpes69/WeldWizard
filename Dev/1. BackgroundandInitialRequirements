@@ -45,7 +45,7 @@ To accurately calculate the cost of each project, the tool will consider the fol
     - Duration of use (time-based or per job basis).
 
 4. **Consumables**:
-    - *Welding Consumables*: Calculated based on the total length of welds in inches, including costs of welding rods, electricity, and other related factors.
+    - *Cost of welding*: Calculated based on the total length of welds in inches, to calculate the price per inch an equation will need to be developed that will use the costs of welding rods, electricity, and other related items that are used for welding that would effect the costs of operation.
     - *Grinding Discs and Other Consumables*: Costs are included based on the number of consumables used during the project. Discs or other items are counted as used if they are consumed entirely or significantly enough to be replaced.
 
 5. **Overhead Costs**:
