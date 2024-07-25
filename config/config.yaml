@@ -1,1 +1,58 @@
+# Application settings
+app:
+  name: WeldWizard
+  version: 1.0.0
+  environment: development  # Options: development, staging, production
+  debug: true               # Set to false in production
 
+# Server settings
+server:
+  host: localhost
+  port: 8000
+  url: http://localhost:8000
+
+# Database configuration
+database:
+  host: localhost
+  port: 5432
+  name: weldwizard
+  user: username
+  password: password
+  options:                 # Additional database options, if any
+    pool_size: 5
+    timeout: 30
+
+# Logging configuration
+logging:
+  level: info              # Options: debug, info, warning, error
+  file: logs/weldwizard.log # Log file path
+
+# Email configuration
+email:
+  smtp_server: smtp.example.com
+  port: 587
+  use_tls: true
+  username: user@example.com
+  password: email_password
+  default_sender: no-reply@weldwizard.com
+
+# External services configuration
+services:
+  payment_gateway:
+    api_key: your_payment_gateway_key_here
+    secret_key: your_payment_gateway_secret_here
+  analytics:
+    tracking_id: your_analytics_tracking_id_here
+
+# Security settings
+security:
+  secret_key: your_secret_key_here
+  jwt_expiration: 3600      # Token expiration time in seconds
+  allowed_hosts:
+    - localhost
+    - 127.0.0.1
+
+# Other settings
+misc:
+  timezone: UTC             # Default timezone
+  currency: USD             # Default currency for transactions
