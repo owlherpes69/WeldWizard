@@ -1,0 +1,54 @@
+Technical Design
+1. Architecture Overview
+The tool will be designed as a modular application, allowing for easy updates and additions. It will consist of the following main components:
+
+User Interface: Initially CLI-based, with plans for a future GUI.
+Data Management: A database or file-based system to store projects, actions, costs, and other related data.
+Processing Engine: Handles the calculation of costs based on input data.
+2. Database Schema
+The database schema will need to store detailed information about materials, labor, equipment, consumables, and projects. A relational database can be used for this purpose. Here's a high-level overview of the database tables:
+
+Materials:
+
+id: Primary key
+type: Type of metal
+form: Form of metal
+cost_per_unit: Cost per unit (converted to inches or appropriate measure)
+Labor Actions:
+
+id: Primary key
+action_description: Description of the action (e.g., grinding, welding)
+time_estimate: Estimated time to complete the action
+cost_rate: Hourly rate for the labor
+Equipment Usage:
+
+id: Primary key
+equipment_type: Type of equipment
+usage_time: Time the equipment is used
+cost_rate: Cost associated with equipment usage
+Consumables:
+
+id: Primary key
+type: Type of consumable (e.g., welding rod, grinding disc)
+cost_per_unit: Cost per unit
+Projects:
+
+id: Primary key
+name: Project name
+customer_details: Information about the customer
+total_cost: Total calculated cost of the project
+status: Status (e.g., approved, pending)
+creation_date: Date of project creation
+3. User Interface (CLI)
+The CLI will offer two modes of interaction:
+
+Wizard Mode: Guides the user step-by-step to input project details.
+Form Mode: Allows the user to fill out a comprehensive form with all relevant data at once.
+4. Processing Engine
+The processing engine will calculate the costs based on the inputs provided by the user. It will:
+
+Retrieve relevant rates and details from the database.
+Calculate total material costs, labor costs, equipment usage, and consumable costs.
+Generate a detailed pricing breakdown.
+5. Data Storage and Management
+Data will be stored in a relational database or a structured file format (e.g., JSON or CSV) to facilitate easy data retrieval and updates.
