@@ -1,1 +1,28 @@
 
+# Core dependencies
+Flask==2.0.2                # For web server and potential GUI backend
+SQLAlchemy==1.4.27          # ORM for database interactions
+alembic==1.7.5              # Database migrations
+requests==2.26.0            # HTTP library for API requests
+PyYAML==6.0                 # YAML parsing and handling for configuration
+
+# CLI tools
+Click==8.0.3                # For building command-line interfaces
+
+# Logging and Debugging
+loguru==0.5.3               # Advanced logging
+colorama==0.4.4             # Cross-platform colored terminal text
+
+# Testing and Development
+pytest==6.2.5               # Testing framework
+pytest-cov==3.0.0           # Test coverage
+black==21.12b0              # Code formatter
+flake8==4.0.1               # Linting tool
+
+# Security
+python-dotenv==0.19.2       # Load environment variables from .env files
+cryptography==36.0.1        # Security and encryption
+
+# GUI (Optional, if planned for future)
+PyQt5==5.15.6               # PyQt for GUI applications (if using Qt)
+Tkinter (built-in)          # Tkinter for simple GUI (comes with Python)
